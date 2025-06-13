@@ -256,11 +256,5 @@ async def get_notification_details(notification_id: str) -> Dict[str, Any]:
             raise Exception(f"Error making request to SAP API: {str(e)}")
 
 if __name__ == "__main__":
-    # Set environment variables for SSE transport
-    os.environ["MCP_TRANSPORT"] = "sse"
-    os.environ["MCP_SSE_PING_INTERVAL"] = "30"
-    os.environ["MCP_SSE_PING_TIMEOUT"] = "10"
-    os.environ["MCP_SSE_RECONNECT_INTERVAL"] = "5"
-    
     # Run the server
     app.run(transport="sse") 
